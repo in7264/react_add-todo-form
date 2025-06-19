@@ -19,10 +19,7 @@ export interface User {
 }
 
 export const App = () => {
-  const initialTodos = todosFromServer.map(todo => ({
-    ...todo,
-    user: usersFromServer.find(user => user.id === todo.userId)!,
-  }));
+  const initialTodos = todosFromServer;
 
   const [todos, setTodos] = useState<Todo[]>(initialTodos);
   const [title, setTitle] = useState('');
